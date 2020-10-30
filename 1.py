@@ -1,13 +1,19 @@
 # -*- coding: utf-8 -*-
-#Создать список и заполнить его элементами различных типов данных. 
-#Реализовать скрипт проверки типа данных каждого элемента. Использовать 
-#функцию type() для проверки типа. Элементы списка можно не запрашивать у 
-#пользователя, а указать явно, в программе.
+#Реализовать функцию, принимающую два числа (позиционные аргументы) и 
+#выполняющую их деление. Числа запрашивать у пользователя, предусмотреть 
+#обработку ситуации деления на ноль.
 
-docket = [True, 3.0, 3, 0b11, 0o11, 0x11, 'one', 1+2j, range(3), ['o', 'n', 'e'], ('o', 'n', 'e'), 
-          {'o', 'n', 'e'}, frozenset([1,2,3]), {0 : '0', 1 : '1', 2: '2'}, None, KeyboardInterrupt, 
-          b'one', bytearray(b'one')]
-for element in docket:
-    str_type = str(type(element)).split('\'')[1]
-    print('Элемент', element, 'имеет тип', str_type)
-    
+def division(dividend, divisor):
+    try:
+        return dividend / divisor
+    except ZeroDivisionError:
+        print('Деление на ноль')
+        return
+while True:
+    try:
+        a, b = float(input('Введите делимое: ')), float(input('Введите делитель: '))
+        break
+    except ValueError:
+        print('Вы ввели не число, а что-то другое. Повторите ввод')
+        continue
+print('Частное равно: ', division(a, b)) 
