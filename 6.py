@@ -1,10 +1,16 @@
 # -*- coding: utf-8 -*-
-#Реализовать функцию int_func(), принимающую слово из маленьких латинских 
-#букв и возвращающую его же, но с прописной первой буквой. Например, 
-#print(int_func(‘text’)) -> Text
-
-def up_letter(s):
-    return s.capitalize()
-string = input('Введите строку из слов для обработки: ').split()
-print(' '.join(up_letter(word) for word in string))
-    
+from itertools import count
+from itertools import cycle
+k = int(input('Введите целое число, меньшее 40: '))
+for num in count(k):
+    if num > 40:
+        break
+    else:
+        print(num, end=' ')
+l = input('Введите строку символов: ')
+c = 0
+for char in cycle(l):
+    if c > 40:
+        break
+    print(char, end=' ')
+    c += 1
