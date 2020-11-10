@@ -22,9 +22,9 @@ class Car:
     def stop(self):
         return print(f'Машина {self.name} остановилась')
     def turn(self, direction):
-        if self.direction == 'left':
+        if direction == 'left':
             return print(f'Машина {self.name} повернула налево')
-        elif self.direction == 'right':
+        elif direction == 'right':
             return print(f'Машина {self.name} повернула направо')
         else:
             print(f'Данные по направлению машины {self.name} некорректны')
@@ -69,6 +69,9 @@ mustang.show_speed()
 priora.show_speed()
 geely.show_speed()
 focus.show_speed()
+priora.go()
+geely.stop()
+mustang.turn('right')
 print(f'{focus.police()} на скорости {focus.speed} км/ч преследует {mustang.color} {mustang.name}.')
 
 

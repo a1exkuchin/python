@@ -31,9 +31,11 @@ class Handle(Stationary):
     def draw(self):
         return print(f'Запускаем {self.title}. Рисуем маркером.')
 
+stationary = Stationary('перо')
 pen = Pen('ручку')
 pencil = Pencil('карандаш')
 handle = Handle('маркер')
 pen.draw()
 pencil.draw()
 handle.draw()
+stationary.draw()
