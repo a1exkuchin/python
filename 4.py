@@ -35,8 +35,6 @@ class Car:
             return f'Полицейская машина {self.name}'
 
 class TownCar(Car):
-    def __init__(self, speed, color, name, is_police):
-        super().__init__(speed, color, name, is_police)
     def show_speed(self):
         if self.speed > 60:
             return print(f'Машина {self.name} превысила скорость, разрешенную для городских машин, на {self.speed - 60} км/ч.')
@@ -44,8 +42,6 @@ class TownCar(Car):
             return print(f'У машины {self.name} текущая скорость {self.speed} км/ч.')
 
 class WorkCar(Car):
-    def __init__(self, speed, color, name, is_police):
-        super().__init__(speed, color, name, is_police)
     def show_speed(self):
         if self.speed > 40:
             return print(f'Машина {self.name} превысила скорость, разрешенную для служебных машин, на {self.speed - 40} км/ч.')
@@ -53,12 +49,10 @@ class WorkCar(Car):
             return print(f'У машины {self.name} текущая скорость {self.speed} км/ч.')
 
 class SportCar(Car):
-    def __init__(self, speed, color, name, is_police):
-        super().__init__(speed, color, name, is_police)
+    pass
 
 class PoliceCar(Car):
-    def __init__(self, speed, color, name, is_police):
-        super().__init__(speed, color, name, is_police)
+    pass
 
 mustang = SportCar(170, 'черный', 'Форд Мустанг', False)
 priora = TownCar(70, 'белая', 'Лада Приора', False)
